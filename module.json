@@ -1,0 +1,65 @@
+{
+  "id": "2e-shops",
+  "title": "2E Shops",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "ars",
+        "type": "system",
+        "compatibility": {}
+      }
+    ],
+    "requires": [
+      {
+        "id": "socketlib",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  },
+  "description": "A module to create shops where players can buy and sell gear.",
+  "authors": [
+    {
+      "name": "DudeandDragons",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "scripts/init.js",
+    "scripts/shop-hud-button.js",
+    "scripts/shop-DMSocket.js",
+    "scripts/shop-buyandsell.js",
+    "scripts/shop-buybutton.js",
+    "scripts/shop-sellbutton.js",
+    "scripts/shop-cartbutton.js",
+    "scripts/shop-innbutton.js",
+    "scripts/shop-itembutton.js",
+    "scripts/shop-servicebutton.js",
+    "scripts/shop-completebutton.js",
+    "scripts/npc-sheet.js",
+    "scripts/shop-multipliers.js",
+    "scripts/currency-utils.js",
+    "scripts/shop-subtypres.js",
+    "scripts/shop-itemblock.js"
+  ],
+  "styles": [
+    "styles/shop-multipliers.css",
+    "styles/shop.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "socket": true,
+  "manifest": "",
+  "readme": "README.md"
+}

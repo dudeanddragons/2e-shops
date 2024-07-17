@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="path/to/shop.css">
+    <script src="path/to/shop-cartbutton.js" type="module" defer></script>
+    <script src="path/to/shop-completebutton.js" type="module" defer></script>
+</head>
+<body>
+    <div class="shop-container">
+        <div class="shop-header">
+            <h1>Shop: {{npcName}}</h1>
+            <div class="shop-name">
+                <span class="transaction-mode-text">Transaction Mode: Buy</span>
+                <p></p>
+            </div>
+        </div>
+        <div class="shop-body">
+            <div class="shop-items-container">
+                <img id="npc-image" class="shop-image" src="" alt="NPC Image">
+                <ul id="shop-items-list" class="shop-items-list"></ul>
+                <div class="shop-total-copper">
+                    <span>Player Funds:</span>
+                    <span id="total-copper">100</span>
+                </div>
+                <div class="shop-toggle-container">
+                    <button id="buy-mode" class="shop-mode-button" title="Buy Items">
+                        <img src="icons/containers/chest/chest-elm-steel-brown.webp" alt="Buy">
+                    </button>
+                    <button id="sell-mode" class="shop-mode-button" title="Sell Items">
+                        <img src="icons/commodities/currency/coins-stitched-pouch-brown.webp" alt="Sell">
+                    </button>
+                    <button class="shop-category" id="shop-category-lodging" title="Food and Lodging">
+                        <img src="icons/consumables/drinks/alcohol-beer-stein-wooden-metal-brown.webp" alt="Lodging/Food">
+                    </button>
+                    <button class="shop-category" id="shop-category-services" title="Services">
+                        <img src="icons/tools/scribal/ink-quill-pink.webp" alt="Services">
+                    </button>
+                </div>
+            </div>
+            <div class="shop-cart-button-container">
+                <button id="add-to-cart" class="shop-add-button">
+                    <img src="icons/tools/hand/scale-balances-merchant-brown.webp" alt="Add to Cart">
+                </button>
+            </div>
+            <div class="shop-cart-container">
+                <img id="player-image" class="shop-image" src="" alt="Player Image">
+                <ul id="shop-cart-list" class="shop-cart-list"></ul>
+                <div class="shop-total-cost">
+                    <span>Total Cart Cost:</span>
+                    <span id="total-cost">
+                        <span>0 PP <img src="icons/commodities/currency/coin-embossed-unicorn-silver.webp" width="20" height="20"></span>,
+                        <span>0 GP <img src="icons/commodities/currency/coin-embossed-cobra-gold.webp" width="20" height="20"></span>,
+                        <span>0 EP <img src="icons/commodities/currency/coin-engraved-oval-steel.webp" width="20" height="20"></span>,
+                        <span>0 SP <img src="icons/commodities/currency/coin-inset-compass-silver.webp" width="20" height="20"></span>,
+                        <span>0 CP <img src="icons/commodities/currency/coin-oval-rune-copper.webp" width="20" height="20"></span>
+                    </span>
+                </div>
+                <button id="shop-done-button" class="shop-done-button">
+                    <img src="icons/skills/social/theft-pickpocket-bribery-brown.webp" alt="Complete Transaction">
+                </button>
+            </div>
+        </div>
+        <div class="shop-footer">
+            <!-- Removed the old location of the category buttons -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { clearSelectedCheckboxes, updateItemListUI } from './path/to/shop-cartbutton.js';
+        import { completeTransaction } from './path/to/shop-completebutton.js';
+
+        document.getElementById('add-to-cart').addEventListener('click', clearSelectedCheckboxes);
+
+        document.getElementById('shop-done-button').addEventListener('click', () => {
+            const html = document.body;
+            const isSellMode = document.querySelector('.transaction-mode-text').innerText.includes('Sell');
+            const playerActor = game.actors.get('playerId'); // Replace 'playerId' with the actual player actor ID
+            const npcActor = game.actors.get('npcId'); // Replace 'npcId' with the actual NPC actor ID
+            completeTransaction(html, isSellMode, playerActor, npcActor);
+        });
+
+        // Initialize the item list UI on page load
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const html = document.body;
+            updateItemListUI(html);
+        });
+    </script>
+</body>
+</html>

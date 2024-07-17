@@ -1,0 +1,27 @@
+.shop-multipliers-section {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-item {
+  flex: 1 1 30%;
+}
+
+.form-item label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-item select, .form-item input {
+  width: 100%;
+}
+
+.multiplier-select {
+  min-width: 100px; /* Ensures it doesn't become too small */
+  max-width: 100px; /* Ensures it doesn't become too large */
+}

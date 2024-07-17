@@ -1,0 +1,193 @@
+/* shop.css */
+
+/* Custom styles for the shop dialog */
+.custom-shop-dialog .window-content {
+  width: 1600px !important;
+  height: auto;
+}
+
+/* Existing styles */
+.shop-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: 2px solid #000000;
+  margin: 0 auto; /* Center the shop container */
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.shop-items-container {
+  position: relative;
+}
+
+.shop-cart-container {
+  position: relative;
+}
+
+.shop-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  position: absolute;
+  top: -45px; /* Adjusted value to position the image correctly */
+}
+
+#npc-image {
+  left: 10px;
+}
+
+#player-image {
+  right: 10px;
+}
+
+.transaction-mode-text {
+  font-size: 28px;
+}
+
+.shop-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+}
+
+.shop-items-container, .shop-cart-container {
+  width: 48%;
+}
+
+.shop-cart-button-container {
+  width: 100px; /* Ensure the container is wide enough for the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-items-list, .shop-cart-list {
+  list-style-type: none;
+  padding: 0;
+  max-height: 600px; /* Set a max height to ensure both lists are the same height */
+  height: 600px; /* Set height to ensure both lists are the same height */
+  overflow-y: auto;
+  border: 1px solid #666666;
+  padding: 10px;
+  background-color: #333333;
+}
+
+.shop-items-list li, .shop-cart-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #444444;
+}
+
+.shop-total-copper, .shop-total-cost {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop-mode-button, .shop-add-button, .shop-category {
+  margin-top: 10px;
+  padding: 10px;
+  height: 100px; /* Set the height for all buttons to 100px */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.shop-mode-button img, .shop-add-button img, .shop-category img {
+  width: 100%;
+  height: 100%;
+}
+
+.shop-category {
+  width: 100px; /* Ensure the category buttons are 100px wide */
+}
+
+.shop-mode-button {
+  width: 100px; /* Set the buy and sell buttons to 125px wide */
+}
+
+.shop-toggle-container {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+.shop-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.shop-categories {
+  display: none; /* Hide the old category container */
+}
+
+.shop-category {
+  background-color: transparent;
+}
+
+.shop-category:hover img, .shop-mode-button:hover img, .shop-add-button:hover img {
+  filter: brightness(1.2); /* Lighten the image on hover */
+}
+
+/* Add styles for the remove button */
+.shop-cart-list .remove-button {
+  background-color: rgb(92, 92, 92);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  width: 100px;
+}
+
+.shop-cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.shop-cart-list li img {
+  width: 40px;
+}
+
+.shop-cart-list .item-name {
+  width: 400px;
+  text-align: center;
+}
+
+.shop-cart-list .item-cost {
+  width: 50px;
+  text-align: right;
+}
+
+/* Style for the Done button to match the Services button */
+.shop-done-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  padding: 10px; /* Same padding as other buttons */
+  height: 100px; /* Same height as other buttons */
+  width: 100px; /* Same width as category buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 0; /* Align to the far right */
+}
+
+.shop-done-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.shop-done-button:hover img {
+  filter: brightness(1.2); /* Lighten the image on hover */
+}
